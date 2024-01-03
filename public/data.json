@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "brandName": "Toyota",
+    "image": "https://i.ibb.co/3vtSD3t/2023-toyota-corolla-zr-hybrid-hatch-silver-1.jpg",
+    "status": "Available Right Now"
+  },
+  {
+    "id": 2,
+    "brandName": "Ford",
+    "image": "https://i.ibb.co/PZNXNmw/suv-img-bronco-sport.jpg",
+    "status": "Available Right Now"
+  },
+  {
+    "id": 3,
+    "brandName": "Honda",
+    "image": "https://i.ibb.co/9vLMZWg/New-Honda-Civic-Type-R.jpg",
+    "status": "Available Right Now"
+  },
+  {
+    "id": 4,
+    "brandName": "BMW",
+    "image": "https://i.ibb.co/VqCNVg7/IEIGHT-MAIN-i.jpg",
+    "status": "Available Right Now"
+  },
+  {
+    "id": 5,
+    "brandName": "Mercedes-Benz ",
+    "image": "https://i.ibb.co/j5S4Dy7/19c1037-004-1-1578423453.jpg",
+    "status": "Available Right Now"
+  },
+  {
+    "id": 6,
+    "brandName": "Lamborghini",
+    "image": "https://i.ibb.co/7pgnNjZ/gate-models-og-01.webp",
+    "status": "Unavailable Right Now"
+  }
+]
