@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import Registration from "./Registration";
 import { useForm } from "react-hook-form";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import { useAuthGlobally } from "../context/AuthProvaider";
 
 const Login = () => {
   const [signIn, setSignIn] = useState(true);
@@ -13,7 +14,37 @@ const Login = () => {
     setSignIn(!signIn);
   };
 
+  const { login, signInGoogle } = useAuthGlobally();
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log("login page", location);
+  const from = location.state?.from?.pathname || "/";
+
+  const [error, setError] = useState("");
+
   const { register, handleSubmit, reset } = useForm();
+
+  const handleLogin = (data) => {
+    const email = data.email;
+    const password = data.password;
+    console.log(email, password);
+
+    if (!email || !password) {
+      setError("Cannot leave any field empty");
+      return;
+    }
+
+    login(email, password)
+      .then(() => {
+        navigate(from, { replace: true });
+        reset();
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
+  };
+
+  
 
   return (
     <main className="flex items-center justify-center w-full md:h-screen bg-[#1b1e34] px-3 ">
@@ -43,7 +74,7 @@ const Login = () => {
                 Please Login
               </h1>
               <div className=" text-center py-5 rounded md:w-[500px] mx-auto my-5">
-                <form>
+                <form onSubmit={handleSubmit(handleLogin)}>
                   <input
                     {...register("email", { required: true })}
                     className="border-b-2 border-[#d9d9d9]  w-[80%] py-2 my-5 rounded outline-none px-4 "
@@ -91,7 +122,7 @@ const Login = () => {
                   <p className="text-lg text-red-600"></p>
                 </form>
               </div>
-              <button className="p-[10px] border rounded flex justify-center items-center gap-[6px] mx-auto mb-10  ">
+              <button onClick={handelGoogle} className="p-[10px] border rounded flex justify-center items-center gap-[6px] mx-auto mb-10  ">
                 {" "}
                 <FcGoogle />{" "}
                 <span className="text-white">Continue with Google</span>
