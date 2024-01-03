@@ -2,15 +2,18 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import Registration from "./Registration";
+import { useForm } from "react-hook-form";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 const Login = () => {
   const [signIn, setSignIn] = useState(true);
+  const [showPassword, setShowPassword] = useState(false);
 
   const toggle = () => {
     setSignIn(!signIn);
   };
 
-  
+  const { register, handleSubmit, reset } = useForm();
 
   return (
     <main className="flex items-center justify-center w-full md:h-screen bg-[#1b1e34] px-3 ">
@@ -42,6 +45,7 @@ const Login = () => {
               <div className=" text-center py-5 rounded md:w-[500px] mx-auto my-5">
                 <form>
                   <input
+                    {...register("email", { required: true })}
                     className="border-b-2 border-[#d9d9d9]  w-[80%] py-2 my-5 rounded outline-none px-4 "
                     type="email"
                     name="email"
@@ -51,17 +55,27 @@ const Login = () => {
 
                   <div className="relative">
                     <input
+                      {...register("password", { required: true })}
                       name="password"
                       id="password"
+                      type={showPassword ? "text" : "password"}
                       className="border-b-2 border-[#d9d9d9] w-[80%] rounded py-2 px-4 outline-none text-base "
                       autoComplete="off"
                       placeholder="   enter your password"
                     />
-                    {/* <span className='absolute md:top-3 md:right-14 top-3 right-11'>
-                              {
-                                  showPassword ? <AiFillEyeInvisible className='cursor-pointer' onClick={() => setShowPassword(!showPassword)} /> : <AiFillEye className='cursor-pointer' onClick={() => setShowPassword(!showPassword)} />
-                              }
-                          </span> */}
+                    <span className="absolute md:top-3 md:right-14 top-3 right-11">
+                      {showPassword ? (
+                        <AiFillEyeInvisible
+                          className="cursor-pointer"
+                          onClick={() => setShowPassword(!showPassword)}
+                        />
+                      ) : (
+                        <AiFillEye
+                          className="cursor-pointer"
+                          onClick={() => setShowPassword(!showPassword)}
+                        />
+                      )}
+                    </span>
                   </div>
 
                   <p className="mt-5 text-white underline">
