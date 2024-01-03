@@ -10,6 +10,8 @@ const Login = () => {
     setSignIn(!signIn);
   };
 
+  
+
   return (
     <main className="flex items-center justify-center w-full md:h-screen bg-[#1b1e34] px-3 ">
       <div className="max-w-[1240px] w-full mx-auto mt-10 grid  md:grid-cols-2 gap-5 md:gap-0 py-5">
