@@ -90,7 +90,7 @@ const NavBar = () => {
       <div className="flex items-center gap-5">
         {user?.photoURL ? (
           <img
-            className="w-[35px] h-[35px] rounded-full"
+            className="w-[35px] border-2 border-green-500 h-[35px] rounded-full"
             src={user.photoURL}
             title={user.displayName}
             alt=""

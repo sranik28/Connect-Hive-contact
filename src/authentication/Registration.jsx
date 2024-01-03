@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { useAuthGlobally } from "../context/AuthProvaider";
 import { useForm } from "react-hook-form";
@@ -19,7 +18,6 @@ const Registration = () => {
     const email = data.email;
     const password = data.password;
     const photo = data.photo;
-    console.log(name, email, password, photo);
 
     if (!/(?=.*?[A-Z])/.test(password)) {
       setError("At last one uppercase ");
@@ -136,7 +134,8 @@ const Registration = () => {
           >
             SignUp{" "}
           </button>
-          <p className="text-lg text-red-600"></p>
+          <p className="text-lg text-red-600">{error}</p>
+          <p>{success}</p>
           {/* <p className='my-5 text-white'> Create a new account?<Link to="/signup" className='text-[#4c5696] underline'> Registration</Link></p> */}
         </form>
       </div>
