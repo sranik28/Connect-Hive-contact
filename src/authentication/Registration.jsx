@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 
 const Registration = () => {
+  const { createUser, signInGoogle } = useAuthGlobally();
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const { register, handleSubmit, reset } = useForm();
+
   return (
     <div className="bg-black border-2 border-[#4c5696] rounded-e-md">
       <h1 className="my-5 text-5xl font-bold text-center text-white">

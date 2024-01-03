@@ -8,13 +8,14 @@ import { AiOutlineClose } from "react-icons/ai";
 // import useAuthorization from "../../hook/useAuthorization";
 import { motion } from "framer-motion";
 import useDark from "../hook/useDark";
+import { useAuthGlobally } from "../context/AuthProvaider";
 
 const NavBar = () => {
   const [toggle, setToggle] = useState(false);
   const [isDark, setIsdark] = useState(null);
   useDark(isDark);
-  const user = null;
-  const logOut = null;
+  const { user, logOut } = useAuthGlobally();
+  // const logOut = null;
 
   // const { user, logOut } = useAuthGlobally();
   // const { role } = useAuthorization()

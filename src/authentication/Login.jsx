@@ -44,7 +44,30 @@ const Login = () => {
       });
   };
 
-  
+  const handelGoogle = () => {
+    signInGoogle()
+      .then((result) => {
+        const user = {
+          name: result?.user?.displayName,
+          email: result?.user?.email,
+          photo_url: result?.user?.photoURL,
+        };
+
+        axiosSecure.put(`/add-user?email=${user?.email}`, user).then((res) => {
+          if (res.data) {
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: "Login sucessfull",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          }
+        });
+        navigate(from);
+      })
+      .catch((error) => {});
+  };
 
   return (
     <main className="flex items-center justify-center w-full md:h-screen bg-[#1b1e34] px-3 ">
@@ -122,7 +145,10 @@ const Login = () => {
                   <p className="text-lg text-red-600"></p>
                 </form>
               </div>
-              <button onClick={handelGoogle} className="p-[10px] border rounded flex justify-center items-center gap-[6px] mx-auto mb-10  ">
+              <button
+                onClick={handelGoogle}
+                className="p-[10px] border rounded flex justify-center items-center gap-[6px] mx-auto mb-10  "
+              >
                 {" "}
                 <FcGoogle />{" "}
                 <span className="text-white">Continue with Google</span>
