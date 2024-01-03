@@ -8,6 +8,63 @@ const Registration = () => {
   const [success, setSuccess] = useState("");
   const { register, handleSubmit, reset } = useForm();
 
+  const handleRegister = (data) => {
+    setSuccess("");
+    setError("");
+
+    const name = data.name;
+    const email = data.email;
+    const password = data.password;
+    const confirmPassword = data.confirmPassword;
+    const photo = data.photo;
+
+    if (password !== confirmPassword) {
+      setError("Your password did not match");
+      return;
+    }
+
+    if (!/(?=.*?[A-Z])/.test(password)) {
+      setError("At last one uppercase ");
+      return;
+    } else if (password.length < 6) {
+      setError("please add at least 6 number");
+      return;
+    }
+
+    createUser(email, password)
+      .then((result) => {
+        const currentUser = result.user;
+        reset();
+        updateProfile(currentUser, { displayName: name, photoURL: photo });
+        setSuccess("User has created successfully");
+        const user = {
+          name: name,
+          email: email,
+          photo_url: photo,
+        };
+
+        axiosSecure.put(`/add-user?email=${user?.email}`, user).then((res) => {
+          console.log(res);
+          if (res.data) {
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: "Sign Up sucessfull",
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          }
+        });
+        navigate("/");
+
+        setSuccess("Registration successfull");
+        reset();
+      })
+      .catch((error) => {
+        // setError(error)
+      });
+  };
+
   return (
     <div className="bg-black border-2 border-[#4c5696] rounded-e-md">
       <h1 className="my-5 text-5xl font-bold text-center text-white">
