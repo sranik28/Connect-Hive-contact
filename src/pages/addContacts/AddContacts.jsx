@@ -1,8 +1,8 @@
-import { useForm } from "react-hook-form";
 import React from "react";
 // import bgImg from "../../assets/addContact/abstract-backgrounds-minimalistic-website-wallpaper-preview.jpg";
 
 import "./AddContact.css";
+import { useForm } from "react-hook-form";
 
 const AddContacts = () => {
   const { register, handleSubmit } = useForm();

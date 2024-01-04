@@ -4,12 +4,17 @@ import Login from "../authentication/Login";
 import Registration from "../authentication/Registration";
 import AddContacts from "../pages/addContacts/AddContacts";
 import AllContacts from "../pages/AllContacts";
+import Home from "../pages/Home";
 
 const Router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
     children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
       {
         path: "/login",
         element: <Login />,

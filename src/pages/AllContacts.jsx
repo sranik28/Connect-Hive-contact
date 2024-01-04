@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import AllCard from "../components/AllCard";
-import ContactModal from "../components/ContactModal";
+import ContactModal from "../components/contactModal/ContactModal";
 
 const AllContacts = () => {
   const [data, setData] = useState([]);
@@ -8,15 +8,15 @@ const AllContacts = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    fetch("https://relate-hub-server.vercel.app/contacts")
+    fetch("http://localhost:8888/allContact")
       .then((res) => res.json())
       .then((data) => setData(data));
-  }, [data]);
+  }, []);
 
   const handelModal = (id) => {
     setIsOpen(!isOpen);
     setContactId(id);
-    console.log(id);
+    // console.log(id);
   };
 
   return (
@@ -42,8 +42,8 @@ const AllContacts = () => {
         setIsOpen={setIsOpen}
       />
       <div className="grid grid-cols-3 gap-10 ">
-        {data?.map((cards, i) => (
-          <AllCard handelModal={handelModal} key={i + 1} cards={cards} />
+        {data?.map((cards) => (
+          <AllCard handelModal={handelModal} key={cards._id} cards={cards} />
         ))}
       </div>
     </main>
