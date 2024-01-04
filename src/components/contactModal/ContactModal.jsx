@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./contsctModal.css";
 import Modal from "../ui/Modal";
-import Swal from "sweetalert2";
+
 
 const ContactModal = ({ isOpen, setIsOpen, contactId }) => {
   const [singleContact, setSingleContact] = useState(null);
@@ -27,9 +27,7 @@ const ContactModal = ({ isOpen, setIsOpen, contactId }) => {
       body: JSON.stringify(userInfo),
     };
 
-    
-
-    fetch(`http://localhost:8888/allContact/${contactId}`, options)
+    fetch(`https://connect-hive.vercel.app/allContact/${contactId}`, options)
       .then((response) => response.json())
       .then((response) => console.log(response))
       .catch((err) => console.error(err));
@@ -39,7 +37,7 @@ const ContactModal = ({ isOpen, setIsOpen, contactId }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8888/allContact/${contactId}`
+          `https://connect-hive.vercel.app/allContact/${contactId}`
         );
         setSingleContact(response.data);
       } catch (error) {

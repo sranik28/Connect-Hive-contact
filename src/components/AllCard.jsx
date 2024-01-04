@@ -22,7 +22,7 @@ const AllCard = ({ cards, handelModal }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:8888/deleteContact/${_id}`, options)
+        fetch(`https://connect-hive.vercel.app/deleteContact/${_id}`, options)
           .then((response) => response.json())
           .then((response) => {
             console.log(response);

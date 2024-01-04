@@ -1,22 +1,54 @@
-import React from "react";
-// import bgImg from "../../assets/addContact/abstract-backgrounds-minimalistic-website-wallpaper-preview.jpg";
-
+import React, { useState } from "react";
+import "react-phone-number-input/style.css";
 import "./AddContact.css";
-import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
+import PhoneInput from "react-phone-number-input";
 
 const AddContacts = () => {
-  const { register, handleSubmit } = useForm();
+  const [value, setValue] = useState();
 
-  const handelAddContact = (data) => {
-    const name = data.name;
-    const email = data.email;
-    const address = data.address;
-    const phonNumber = data.phonNumber;
-    const photo = data.profilePicture;
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const phone = form.phone.value;
+    const address = form.address.value;
+    const photoURL = form.photoURL.value;
+    const userInfo = { name, email, phone, address, photoURL };
+    console.log(userInfo);
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userInfo),
+    };
 
-    console.log(name, email, address, phonNumber, photo);
+    fetch("https://connect-hive.vercel.app/contacts", options)
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+        if (response.insertedId) {
+          Swal.fire({
+            title: "Contact Added Successfully",
+            icon: "success",
+
+            confirmButtonColor: "cool",
+            confirmButtonText: "OK",
+          });
+        } else {
+          Swal.fire({
+            title: "Already Added Bookmark",
+            icon: "error",
+
+            confirmButtonColor: "cool",
+            confirmButtonText: "OK",
+          });
+        }
+      })
+      .catch((err) => console.error(err));
   };
-
   return (
     <main className="relative overflow-hidden">
       <div
@@ -39,45 +71,28 @@ const AddContacts = () => {
           </h1>
           <div className="flex items-center justify-center ">
             <div className="mt-10 form-container ">
-              <form onSubmit={handleSubmit(handelAddContact)} className=" form">
+              <form onSubmit={handleSubmit} className=" form">
                 <div className="form-group">
                   <label className="" for="name">
                     Name
                   </label>
-                  <input
-                    {...register("name", { required: true })}
-                    name="name"
-                    id="name"
-                    type="text"
-                  />
+                  <input name="name" id="name" type="text" />
                   <label for="email"> Email</label>
-                  <input
-                    {...register("email", { required: true })}
-                    name="email"
-                    id="email"
-                    type="text"
-                  />
+                  <input name="email" id="email" type="text" />
                   <label for="PhoneNumber"> Phone Number</label>
-                  <input
-                    {...register("phonNumber", { required: true })}
-                    name="phonNumber"
-                    id="phonNumber"
-                    type="text"
+                  <PhoneInput
+                    className="input"
+                    name="phone"
+                    id="email"
+                    international
+                    defaultCountry="BD"
+                    value={value}
+                    onChange={setValue}
                   />
                   <label for="Address"> Address</label>
-                  <input
-                    {...register("address", { required: true })}
-                    name="address"
-                    id="address"
-                    type="text"
-                  />
+                  <input name="address" id="address" type="text" />
                   <label for="Profile picture">picture URL</label>
-                  <input
-                    {...register("profilePicture", { required: true })}
-                    name="profilePicture"
-                    id="profilePicture"
-                    type="text"
-                  />
+                  <input name="photoURL" id="photoURL" type="text" />
                 </div>
 
                 <button type="submit" class="form-submit-btn">

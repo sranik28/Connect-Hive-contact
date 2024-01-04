@@ -8,10 +8,10 @@ const AllContacts = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:8888/allContact")
+    fetch("https://connect-hive.vercel.app/allContact")
       .then((res) => res.json())
       .then((data) => setData(data));
-  }, []);
+  }, [data]);
 
   const handelModal = (id) => {
     setIsOpen(!isOpen);
