@@ -1,7 +1,41 @@
 import React from "react";
+import Swal from "sweetalert2";
 
 const AllCard = ({ cards, handelModal }) => {
   const { name, email, photoURL, address, phone } = cards || {};
+
+  const options = {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: "{}",
+  };
+  const handleDelete = (_id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:8888/deleteContact/${_id}`, options)
+          .then((response) => response.json())
+          .then((response) => {
+            console.log(response);
+          })
+          .catch((err) => console.error(err));
+        Swal.fire({
+          title: "Deleted!",
+          text: "Your file has been deleted.",
+          icon: "success",
+        });
+      }
+    });
+  };
 
   return (
     <div className="p-2 border shadow-lg rounded-xl ">
@@ -58,7 +92,7 @@ const AllCard = ({ cards, handelModal }) => {
                   <p onClick={() => handelModal(cards?._id)}>Update</p>
                 </li>
                 <li className="rounded-lg hover:bg-sky-600">
-                  <p>Delete</p>
+                  <p onClick={() => handleDelete(cards?._id)}>Delete</p>
                 </li>
               </details>
             </li>

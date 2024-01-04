@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./contsctModal.css";
 import Modal from "../ui/Modal";
+import Swal from "sweetalert2";
 
 const ContactModal = ({ isOpen, setIsOpen, contactId }) => {
   const [singleContact, setSingleContact] = useState(null);
@@ -25,6 +26,8 @@ const ContactModal = ({ isOpen, setIsOpen, contactId }) => {
       },
       body: JSON.stringify(userInfo),
     };
+
+    
 
     fetch(`http://localhost:8888/allContact/${contactId}`, options)
       .then((response) => response.json())
