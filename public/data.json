@@ -1,38 +1,44 @@
 [
   {
-    "id": 1,
-    "brandName": "Toyota",
-    "image": "https://i.ibb.co/3vtSD3t/2023-toyota-corolla-zr-hybrid-hatch-silver-1.jpg",
-    "status": "Available Right Now"
+    "name": "John Smith",
+    "email": "john.smith@gmail.com",
+    "phone": "+1 234 567 8901",
+    "address": "123 Oak Street",
+    "photoURL": "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=600"
   },
   {
-    "id": 2,
-    "brandName": "Ford",
-    "image": "https://i.ibb.co/PZNXNmw/suv-img-bronco-sport.jpg",
-    "status": "Available Right Now"
+    "name": "Emma Johnson",
+    "email": "emma.johnson@gmail.com",
+    "phone": "+44 7123 456789",
+    "address": "456 Maple Avenue",
+    "photoURL": "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
   },
   {
-    "id": 3,
-    "brandName": "Honda",
-    "image": "https://i.ibb.co/9vLMZWg/New-Honda-Civic-Type-R.jpg",
-    "status": "Available Right Now"
+    "name": "David Brown",
+    "email": "dbrown@gmail.com",
+    "phone": "+61 433 987 654",
+    "address": "789 Pine Street",
+    "photoURL": "https://images.pexels.com/photos/5638731/pexels-photo-5638731.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
   },
   {
-    "id": 4,
-    "brandName": "BMW",
-    "image": "https://i.ibb.co/VqCNVg7/IEIGHT-MAIN-i.jpg",
-    "status": "Available Right Now"
+    "name": "Sophia Davis",
+    "email": "sophia.davis@gmail.com",
+    "phone": "+33 6 12 34 56 78",
+    "address": "1010 Cedar Lane",
+    "photoURL": "https://images.pexels.com/photos/3998154/pexels-photo-3998154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
   },
   {
-    "id": 5,
-    "brandName": "Mercedes-Benz ",
-    "image": "https://i.ibb.co/j5S4Dy7/19c1037-004-1-1578423453.jpg",
-    "status": "Available Right Now"
+    "name": "Oliver Wilson",
+    "email": "oliver.wilson@gmail.com",
+    "phone": "+91 98765 43210",
+    "address": "555 Elm Street",
+    "photoURL": "https://images.pexels.com/photos/4307884/pexels-photo-4307884.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
   },
   {
-    "id": 6,
-    "brandName": "Lamborghini",
-    "image": "https://i.ibb.co/7pgnNjZ/gate-models-og-01.webp",
-    "status": "Unavailable Right Now"
+    "name": "Charlotte Martinez",
+    "email": "charlotte.martinez@gmail.com",
+    "phone": "+55 11 98765-4321",
+    "address": "777 Birch Avenue",
+    "photoURL": "https://images.pexels.com/photos/7580994/pexels-photo-7580994.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
   }
 ]
