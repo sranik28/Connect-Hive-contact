@@ -1,6 +1,6 @@
 import React from "react";
 
-const AllCard = ({ cards }) => {
+const AllCard = ({ cards, handelModal }) => {
   const { name, email, photoURL, address, phone } = cards || {};
 
   return (
@@ -55,7 +55,7 @@ const AllCard = ({ cards }) => {
                 <summary className="rounded-lg hover:bg-sky-600">Menu</summary>
 
                 <li className="rounded-lg hover:bg-sky-600 ">
-                  <p>Update</p>
+                  <p onClick={() => handelModal(cards?._id)}>Update</p>
                 </li>
                 <li className="rounded-lg hover:bg-sky-600">
                   <p>Delete</p>

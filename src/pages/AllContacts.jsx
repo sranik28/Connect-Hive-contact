@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from "react";
 import AllCard from "../components/AllCard";
-import { set } from "react-hook-form";
+import ContactModal from "../components/ContactModal";
 
 const AllContacts = () => {
   const [data, setData] = useState([]);
   const [contactId, setContactId] = useState();
   const [isOpen, setIsOpen] = useState(false);
 
+  useEffect(() => {
+    fetch("https://relate-hub-server.vercel.app/contacts")
+      .then((res) => res.json())
+      .then((data) => setData(data));
+  }, [data]);
+
   const handelModal = (id) => {
     setIsOpen(!isOpen);
     setContactId(id);
     console.log(id);
   };
-
-  useEffect(() => {
-    fetch("data.json")
-      .then((res) => res.json())
-      .then((data) => setData(data));
-  }, []);
 
   return (
     <main className="container ">
@@ -36,9 +36,14 @@ const AllContacts = () => {
             <h1 className="my-3 text-lg font-semibold">Address:</h1>
           </div>
         </div> */}
+      <ContactModal
+        contactId={contactId}
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+      />
       <div className="grid grid-cols-3 gap-10 ">
         {data?.map((cards, i) => (
-          <AllCard key={i + 1} cards={cards} />
+          <AllCard handelModal={handelModal} key={i + 1} cards={cards} />
         ))}
       </div>
     </main>
