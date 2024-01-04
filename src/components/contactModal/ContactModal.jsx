@@ -14,7 +14,7 @@ const ContactModal = ({ isOpen, setIsOpen, contactId }) => {
     const name = from.name.value;
     const email = from.email.value;
     const address = from.address.value;
-    const phone = from.phone.value;
+    const phone = from.phone.value; 
     const photoURL = from.photoURL.value;
 
     console.log(name, email, address, phone, photoURL);
