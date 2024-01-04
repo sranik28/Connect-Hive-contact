@@ -3,7 +3,6 @@ import axios from "axios";
 import "./contsctModal.css";
 import Modal from "../ui/Modal";
 
-
 const ContactModal = ({ isOpen, setIsOpen, contactId }) => {
   const [singleContact, setSingleContact] = useState(null);
   const { name, email, address, photoURL, phone } = singleContact || {};
@@ -14,7 +13,7 @@ const ContactModal = ({ isOpen, setIsOpen, contactId }) => {
     const name = from.name.value;
     const email = from.email.value;
     const address = from.address.value;
-    const phone = from.phone.value; 
+    const phone = from.phone.value;
     const photoURL = from.photoURL.value;
 
     console.log(name, email, address, phone, photoURL);
@@ -107,8 +106,6 @@ const ContactModal = ({ isOpen, setIsOpen, contactId }) => {
                       defaultValue={photoURL}
                     />
                   </div>
-
-
 
                   <button type="submit" class="form-submit-btn">
                     Submit
