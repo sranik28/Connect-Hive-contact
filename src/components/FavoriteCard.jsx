@@ -42,7 +42,7 @@ const FavoriteCards = ({ item }) => {
     setIsFavorite(!isFavorite);
   };
   return (
-    <div className="p-2 border shadow-lg rounded-xl ">
+    <div className="p-3 duration-300 border-2 rounded-md hover:border-2 hover:shadow-md hover:border-Primary hover:shadow-Primary">
       <div className="relative flex flex-col items-center justify-end gap-2 overflow-hidden bg-gray-50 rounded-2xl ">
         <div className=" card__avatar">
           <img
@@ -67,7 +67,7 @@ const FavoriteCards = ({ item }) => {
         <button
           onClick={toggleFavorite}
           className={`${
-            isFavorite ? "bg-red-600" : "bg-sky-600"
+            isFavorite ? "bg-red-600" : "bg-Primary"
           } text-white rounded-full p-3 font-semibold`}
         >
           {isFavorite ? "Remove from Favorites" : "Add to Favorites"}

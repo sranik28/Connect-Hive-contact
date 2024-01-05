@@ -6,5 +6,5 @@
   @apply max-w-[1240px] px-3 mx-auto;
 }
 .active {
-  @apply text-[#4c5696] font-bold;
+  @apply font-bold text-Primary;
 }

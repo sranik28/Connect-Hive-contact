@@ -81,7 +81,7 @@ const AddContacts = () => {
                   <input name="email" id="email" type="text" />
                   <label for="PhoneNumber"> Phone Number</label>
                   <PhoneInput
-                    className="input"
+                    className="text-black"
                     name="phone"
                     id="email"
                     international

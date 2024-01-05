@@ -13,9 +13,9 @@ const Favorite = () => {
   }, []);
 
   return (
-    <div className="max-w-[1400px] mx-auto">
-      <h1 className="my-4 heading">Favorite Contacts</h1>
-     
+    <div className="container">
+      <h1 className="flex items-center justify-center my-2 mt-5 text-4xl">Favorite Contacts</h1>
+      <div className="bg-Primary w-[100px] mx-auto h-[6px]"></div>
       <ContactModal
         isOpen={isOpen}
         setIsOpen={setIsOpen}

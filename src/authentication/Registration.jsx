@@ -87,7 +87,7 @@ const Registration = () => {
   };
 
   return (
-    <div className="bg-black border-2 border-[#4c5696] rounded-e-md">
+    <div className="bg-black border-2 border-Primary rounded-e-md">
       <h1 className="my-5 text-5xl font-bold text-center text-white">
         Please Sing Up
       </h1>
@@ -130,7 +130,7 @@ const Registration = () => {
           />{" "}
           <button
             type="submit"
-            className="w-[80%]  bg-[#4c5696]  mx-auto rounded py-2 my-5 text-white font-semibold flex items-center justify-center"
+            className="w-[80%]  bg-Primary  mx-auto rounded py-2 my-5 text-white font-semibold flex items-center justify-center"
           >
             SignUp{" "}
           </button>

@@ -54,17 +54,7 @@ const Login = () => {
           photo_url: result?.user?.photoURL,
         };
 
-        axiosSecure.put(`/add-user?email=${user?.email}`, user).then((res) => {
-          if (res.data) {
-            Swal.fire({
-              position: "center",
-              icon: "success",
-              title: "Login sucessfull",
-              showConfirmButton: false,
-              timer: 1500,
-            });
-          }
-        });
+        
         navigate(from);
       })
       .catch((error) => {});
@@ -93,7 +83,7 @@ const Login = () => {
                 </button>
               </div>
             </div>
-            <div className="bg-black border-2 border-[#4c5696] rounded-e-md">
+            <div className="bg-black border-2 border-Primary rounded-e-md">
               <h1 className="my-5 text-5xl font-bold text-center text-white">
                 Please Login
               </h1>
@@ -138,7 +128,7 @@ const Login = () => {
                   </p>
                   <button
                     type="submit"
-                    className="w-[80%]  bg-[#4c5696]  mx-auto rounded py-2 my-5 text-white font-semibold flex items-center justify-center"
+                    className="w-[80%]  bg-Primary  mx-auto rounded py-2 my-5 text-white font-semibold flex items-center justify-center"
                   >
                     Login{" "}
                   </button>
@@ -160,7 +150,7 @@ const Login = () => {
           <>
             {signIn ? (
               <>
-                <div className="bg-black border-2 border-[#4c5696] rounded-e-md">
+                <div className="bg-black border-2 border-Primary rounded-e-md">
                   <h1 className="my-5 text-5xl font-bold text-center text-white">
                     Please Login
                   </h1>
@@ -215,7 +205,7 @@ const Login = () => {
                       </p>
                     </form>
                   </div>
-                  <button className="p-[10px] border rounded flex justify-center items-center gap-[6px] mx-auto mb-10  ">
+                  <button className="p-[10px] border rounded flex justify-center items-center  gap-[6px] mx-auto mb-10  ">
                     {" "}
                     <FcGoogle />{" "}
                     <span className="text-white">Continue with Google</span>
