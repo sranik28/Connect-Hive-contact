@@ -41,7 +41,8 @@ const AllContacts = () => {
         isOpen={isOpen}
         setIsOpen={setIsOpen}
       />
-      <div className="grid grid-cols-3 gap-10 ">
+      <h1 className="flex items-center justify-center my-10 text-3xl font-semibold">All Contacts</h1>
+      <div className="grid gap-10 mt-10 md:grid-cols-3">
         {data?.map((cards) => (
           <AllCard handelModal={handelModal} key={cards._id} cards={cards} />
         ))}
