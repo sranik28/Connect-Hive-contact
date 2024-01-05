@@ -24,6 +24,8 @@ const Footer = () => {
               >
                 ConnectHive
               </Link>
+
+              
               <p className="text-base text-body-color mb-7">
                 We create memorably <br />
                 digital experiences.
