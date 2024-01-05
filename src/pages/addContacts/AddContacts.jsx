@@ -62,7 +62,7 @@ const AddContacts = () => {
         }}
       >
         <div className="">
-          <h1 className="flex items-center justify-center mt-10 text-4xl font-semibold text-white">
+          <h1 className="flex items-center justify-center mt-10 text-4xl font-semibold text-white md:text-5xl">
             Add Contact
           </h1>
           <div className="bg-Primary mt-3 w-[100px] mx-auto h-[6px]"></div>	
