@@ -6,6 +6,9 @@ export default {
       gridTemplateColumns: {
         "dashboard-md": "280px auto",
       },
+      colors: {
+        'Primary': '#645bff',
+      },
       spacing: {
         "dashboard-md": "280px",
         "dashboard-body": "calc(100% - 280px)",

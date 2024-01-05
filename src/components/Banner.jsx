@@ -30,7 +30,7 @@ const Banner = () => {
               Conquer the TitanArena: Gaming Glory Awaits!
             </div>
             <Link to="/addContacts">
-              <div className="border-2 md:text-[13px] w-1/2 sm:w-1/3 p-3 rounded font-bold py-5 !text-lg  text-center my-6 hover:bg-[#645bff] border-[#645bff] transition duration-500 ease-in-out">
+              <div className="border-2 md:text-[13px] w-1/2 sm:w-1/3 p-3 rounded font-bold py-5 !text-lg  text-center my-6 hover:bg-Primary border-Primary transition duration-500 ease-in-out">
                 Add Contact
               </div>
             </Link>
