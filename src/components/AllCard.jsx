@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import Card from "./ui/card/Card";
 
 const AllCard = ({ cards, handelModal }) => {
   // const { name, email, photoURL, address, phone } = cards || {};
+  const [isFavorite, setIsFavorite] = useState(false);
 
   const options = {
     method: "DELETE",
@@ -38,12 +39,32 @@ const AllCard = ({ cards, handelModal }) => {
     });
   };
 
+ 
+  useEffect(() => {
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    setIsFavorite(favorites.includes(cards?._id));
+  }, [cards?._id]);
+  const toggleFavorite = () => {
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    if (isFavorite) {
+      favorites = favorites.filter((favId) => favId !== cards?._id);
+    } else {
+      favorites.push(cards?._id);
+    }
+
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+    setIsFavorite(!isFavorite);
+  };
+
   return (
     <div>
       <Card
         handelModal={handelModal}
         cards={cards}
         handleDelete={handleDelete}
+        isFavorite={isFavorite}
+        toggleFavorite={toggleFavorite}
       />
     </div>
   );

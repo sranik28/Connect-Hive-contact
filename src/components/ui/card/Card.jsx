@@ -1,6 +1,6 @@
-import React from "react";
+import { FaHeart } from "react-icons/fa";
 
-const Card = ({ cards, handelModal, handleDelete }) => {
+const Card = ({ cards, handelModal, handleDelete,toggleFavorite,isFavorite }) => {
   const { name, email, photoURL, address, phone } = cards || {};
 
   return (
@@ -51,6 +51,32 @@ const Card = ({ cards, handelModal, handleDelete }) => {
             </li>
           </ul>
         </div>
+        <button onClick={toggleFavorite} className="">
+          <div className="tooltip-container">
+            <span
+              //       className={`  isFavorite ? "bg-yellow-400" : "bg-sky-500"
+              //    tooltip w-48 py-3 md:py-3 ml-2   text-xl border-2 border-white bg-sky-500`}
+              className={`${
+                isFavorite ? "bg-red-600" : "bg-sky-600"
+              }  tooltip w-48 py-3 md:py-3 ml-2   text-xl border-2 border-white rounded-full p-2`}
+            >
+              <p className="text-base">
+                {isFavorite ? "Remove " : "Add to Favorites"}
+              </p>
+            </span>
+            <span className="text">
+              <div className="">
+                <div
+                  className={`${
+                    isFavorite ? "bg-red-600" : "bg-sky-600"
+                  } icon border-2 border-white bg-sky-500`}
+                >
+                  <FaHeart className="text-xl text-white " />
+                </div>
+              </div>
+            </span>
+          </div>
+        </button>
       </div>
     </div>
   );

@@ -83,13 +83,13 @@ const ContactModal = ({ isOpen, setIsOpen, contactId }) => {
                       type="text"
                       defaultValue={email}
                     />
-                    <label for="PhoneNumber"> Phone Number</label>
+                    <label for="phone"> Phone Number</label>
                     <input
-                      name="phonNumber"
-                      id="phonNumber"
+                      name="phone"
+                      id="phone"
                       type="text"
                       defaultValue={phone}
-                      de
+                      
                     />
                     <label for="Address"> Address</label>
                     <input
@@ -100,15 +100,12 @@ const ContactModal = ({ isOpen, setIsOpen, contactId }) => {
                     />
                     <label for="Profile picture">picture URL</label>
                     <input
-                      name="profilePicture"
-                      id="profilePicture"
+                      name="photoURL"
+                      id="photoURL"
                       type="text"
                       defaultValue={photoURL}
                     />
                   </div>
-
-
-
                   <button type="submit" class="form-submit-btn">
                     Submit
                   </button>
