@@ -24,8 +24,6 @@ const Footer = () => {
               >
                 ConnectHive
               </Link>
-
-              
               <p className="text-base text-body-color mb-7">
                 We create memorably <br />
                 digital experiences.
@@ -44,6 +42,8 @@ const Footer = () => {
               </p>
             </div>
           </div>
+
+          
           <div className="w-full px-4 sm:w-1/2 lg:w-2/12">
             <div className="w-full mb-10">
               <h4 className="text-lg font-semibold text-dark mb-9">Pages</h4>
