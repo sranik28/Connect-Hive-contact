@@ -254,7 +254,7 @@ const Footer = () => {
         </span>
       </div>
       <div className="w-full mx-auto text-lg font-bold text-center">
-        <hr className="my-5" />© 2023 - {new Date().getFullYear()}
+        <hr className="my-5" />© 2024 - {new Date().getFullYear()}
         <span className="ml-2 mr-2">ConnectHive</span>
         All right reserved. developed by ConnectHive
       </div>
