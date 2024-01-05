@@ -3,9 +3,6 @@ import { Link, NavLink } from "react-router-dom";
 import { MdOutlineDarkMode } from "react-icons/md";
 import { HiMenuAlt2, HiOutlineLightBulb } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
-// import { useAuthGlobally } from "../../context/AuthProvider";
-// import logo from "../../assets/logo.png";
-// import useAuthorization from "../../hook/useAuthorization";
 import { motion } from "framer-motion";
 import useDark from "../hook/useDark";
 import { useAuthGlobally } from "../context/AuthProvaider";
@@ -16,10 +13,7 @@ const NavBar = () => {
   const [isDark, setIsdark] = useState(null);
   useDark(isDark);
   const { user, logOut } = useAuthGlobally();
-  // const logOut = null;
 
-  // const { user, logOut } = useAuthGlobally();
-  // const { role } = useAuthorization()
 
   return (
     <motion.nav
@@ -35,14 +29,13 @@ const NavBar = () => {
         )}
       </span>
       <div className="flex items-center gap-2">
-        {/* <img className="object-cover w-12 h-12" src={logo} alt="" /> */}
         <Link to="/">
-          <h1 className="text-3xl font-bold">ConnectHive </h1>
+          <h1 className="text-3xl font-bold">Connect<span className="text-Primary">Hive</span> </h1>
         </Link>
       </div>
 
       <motion.ul
-        className={`font-semibold flex items-center duration-300 flex-col py-5 px-5 md:p-0 text-white bg-opacity-90 top-[13%] bg-black md:bg-transparent w-36 md:w-auto md:flex-row rounded-md   gap-6 absolute md:static z-50 ${
+        className={`font-semibold flex items-center duration-300 flex-col py-5 px-5 md:p-0 text-white bg-opacity-90 top-[11%] bg-black md:bg-transparent w-36 md:w-auto md:flex-row rounded-md   gap-6 absolute md:static z-50 ${
           toggle ? "top-0 left-0" : "-left-full duration-300"
         }`}
         initial={{ opacity: 0.5 }}
@@ -54,6 +47,7 @@ const NavBar = () => {
           <NavLink
             className={({ isActive }) => (isActive ? "active" : "")}
             to="/addContacts"
+            onClick={()=>setToggle(false)}
           >
             Add Contacts
           </NavLink>
@@ -62,6 +56,7 @@ const NavBar = () => {
           <NavLink
             className={({ isActive }) => (isActive ? "active" : "")}
             to="/allContacts"
+            onClick={()=>setToggle(false)}
           >
             All Contacts
           </NavLink>
@@ -70,6 +65,7 @@ const NavBar = () => {
           <NavLink
             className={({ isActive }) => (isActive ? "active" : "")}
             to="/favorite"
+            onClick={()=>setToggle(false)}
           >
             Favorite
           </NavLink>

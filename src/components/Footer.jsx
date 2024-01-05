@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="relative z-10 bg-[#f9f4f4] mt-[140px] pt-20 pb-10 lg:pt-[120px]  lg:pb-20 px-3">
+    <footer className="relative z-10 bg-[#f9f4f4] mt-[140px] pt-10 pb-10 lg:pt-[120px]  lg:pb-20 px-3">
       <ScrollToTop smooth top={1000} component={<MyIcon />} />
       <div className="container">
         <div className="flex flex-wrap -mx-4">
@@ -25,8 +25,7 @@ const Footer = () => {
                 ConnectHive
               </Link>
               <p className="text-base text-body-color mb-7">
-                We create memorably <br />
-                digital experiences.
+              Communication Redefined<br /> Contacts Refined
               </p>
               <p className="flex items-center text-sm font-medium text-dark">
                 <span className="mr-3 text-Primary">

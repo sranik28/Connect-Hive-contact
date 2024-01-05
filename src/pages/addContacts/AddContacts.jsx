@@ -62,9 +62,10 @@ const AddContacts = () => {
         }}
       >
         <div className="">
-          <h1 className="flex items-center justify-center mt-10 text-2xl font-semibold text-white">
+          <h1 className="flex items-center justify-center mt-10 text-4xl font-semibold text-white">
             Add Contact
           </h1>
+          <div className="bg-Primary mt-3 w-[100px] mx-auto h-[6px]"></div>	
           <div className="flex items-center justify-center ">
             <div className="mt-10 form-container ">
               <form onSubmit={handleSubmit} className=" form">
