@@ -1,6 +1,12 @@
 import { FaHeart } from "react-icons/fa";
 
-const Card = ({ cards, handelModal, handleDelete,toggleFavorite,isFavorite }) => {
+const Card = ({
+  cards,
+  handelModal,
+  handleDelete,
+  toggleFavorite,
+  isFavorite,
+}) => {
   const { name, email, photoURL, address, phone } = cards || {};
 
   return (
@@ -52,26 +58,25 @@ const Card = ({ cards, handelModal, handleDelete,toggleFavorite,isFavorite }) =>
           </ul>
         </div>
         <button onClick={toggleFavorite} className="">
-          <div className="tooltip-container">
-            <span
-              //       className={`  isFavorite ? "bg-yellow-400" : "bg-sky-500"
-              //    tooltip w-48 py-3 md:py-3 ml-2   text-xl border-2 border-white bg-sky-500`}
+          <div className="absolute top-0 flex items-center justify-center mt-3 right-3 tooltip-container">
+            {/* <span
+             
               className={`${
-                isFavorite ? "bg-red-600" : "bg-sky-600"
+                isFavorite ? "bg-red-600" : "bg-Primary"
               }  tooltip w-48 py-3 md:py-3 ml-2   text-xl border-2 border-white rounded-full p-2`}
             >
               <p className="text-base">
                 {isFavorite ? "Remove " : "Add to Favorites"}
               </p>
-            </span>
-            <span className="text">
-              <div className="">
-                <div
-                  className={`${
-                    isFavorite ? "bg-red-600" : "bg-sky-600"
-                  } icon border-2 border-white bg-sky-500`}
-                >
-                  <FaHeart className="text-xl text-white " />
+            </span> */}
+            <span className=" text">
+              <div>
+                <div>
+                  <FaHeart
+                    className={`${
+                      isFavorite ? "text-red-600" : "text-Primary"
+                    } icon text-5xl `}
+                  />
                 </div>
               </div>
             </span>

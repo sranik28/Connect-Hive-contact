@@ -5,6 +5,7 @@ import Registration from "./Registration";
 import { useForm } from "react-hook-form";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { useAuthGlobally } from "../context/AuthProvaider";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const [signIn, setSignIn] = useState(true);

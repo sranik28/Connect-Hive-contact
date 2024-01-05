@@ -5,6 +5,7 @@ import Registration from "../authentication/Registration";
 import AddContacts from "../pages/addContacts/AddContacts";
 import AllContacts from "../pages/AllContacts";
 import Home from "../pages/Home";
+import Favorite from "../components/Favorite";
 
 const Router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const Router = createBrowserRouter([
       {
         path: "/allContacts",
         element: <AllContacts />,
+      },
+      {
+        path: "/favorite",
+        element: <Favorite />,
       },
     ],
   },

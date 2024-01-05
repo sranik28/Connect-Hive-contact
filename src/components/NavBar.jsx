@@ -67,6 +67,14 @@ const NavBar = () => {
           </NavLink>
         </li>
         <li>
+          <NavLink
+            className={({ isActive }) => (isActive ? "active" : "")}
+            to="/favorite"
+          >
+            Favorite
+          </NavLink>
+        </li>
+        <li>
           {user?.email ? (
             <Link to="/login">
               <button
