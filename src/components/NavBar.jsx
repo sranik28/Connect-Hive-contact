@@ -9,6 +9,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { motion } from "framer-motion";
 import useDark from "../hook/useDark";
 import { useAuthGlobally } from "../context/AuthProvaider";
+import SignUpBtn from "./ui/signUpBtn/SignUpBtn";
 
 const NavBar = () => {
   const [toggle, setToggle] = useState(false);
@@ -70,18 +71,18 @@ const NavBar = () => {
             <Link to="/login">
               <button
                 onClick={logOut}
-                className="px-5 py-2 bg-[#4c5696] rounded-md"
+                className=""
               >
-                LogOut
+                <SignUpBtn name='LogOut'/>
               </button>
             </Link>
           ) : (
             <Link to="/login">
               <button
                 onClick={logOut}
-                className="px-5 py-2 bg-[#4c5696] rounded-md"
+                className=""
               >
-                login
+                <SignUpBtn name='Login'/>
               </button>
             </Link>
           )}
