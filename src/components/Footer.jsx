@@ -4,7 +4,7 @@ import {
   BsYoutube,
   BsLinkedin,
 } from "react-icons/bs";
-import { AiOutlineTwitter } from "react-icons/ai";
+import { FaXTwitter } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import ScrollToTop from "react-scroll-to-top";
 import MyIcon from "./ui/MyIcon";
@@ -19,7 +19,7 @@ const Footer = () => {
           <div className="w-full px-4 sm:w-2/3 lg:w-3/12">
             <div className="w-full mb-10">
               <Link
-                href="/"
+                to="/"
                 className="mb-6 inline-block max-w-[160px] text-3xl text-Primary font-bold"
               >
                 ConnectHive
@@ -29,13 +29,13 @@ const Footer = () => {
                 digital experiences.
               </p>
               <p className="flex items-center text-sm font-medium text-dark">
-                <span className="mr-3 text-primary">
+                <span className="mr-3 text-Primary">
                   <BsFillTelephoneFill />
                 </span>
                 <span>+880 1703 2504</span>
               </p>
               <p className="flex items-center mt-4 text-sm font-medium text-dark">
-                <span className="mr-3 text-primary">
+                <span className="mr-3 text-Primary">
                   <MdEmail className="text-lg" />
                 </span>
                 <span>info@connecthive.com</span>
@@ -48,7 +48,7 @@ const Footer = () => {
               <ul>
                 <li>
                   <Link
-                    href="/"
+                    to="/"
                     className="inline-block mb-2 text-base leading-loose text-body-color hover:text-primary"
                   >
                     Home
@@ -56,7 +56,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/about"
+                    to="/addContacts"
                     className="inline-block mb-2 text-base leading-loose text-body-color hover:text-primary"
                   >
                     Add Contacts
@@ -64,7 +64,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/our-projects"
+                    to="/allContacts"
                     className="inline-block mb-2 text-base leading-loose text-body-color hover:text-primary"
                   >
                     All Contacts
@@ -72,7 +72,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/our-team"
+                    to="/favorite"
                     className="inline-block mb-2 text-base leading-loose text-body-color hover:text-primary"
                   >
                    Favorite
@@ -88,7 +88,7 @@ const Footer = () => {
               <ul>
                 <li>
                   <Link
-                    href="#"
+                    to="#"
                     className="inline-block mb-2 text-base leading-loose text-body-color hover:text-primary"
                   >
                     Outlet
@@ -96,7 +96,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/contact"
+                    to="/"
                     className="inline-block mb-2 text-base leading-loose text-body-color hover:text-primary"
                   >
                     Contact & Support
@@ -104,7 +104,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    to="#"
                     className="inline-block mb-2 text-base leading-loose text-body-color hover:text-primary"
                   >
                     Success History
@@ -112,7 +112,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    to="#"
                     className="inline-block mb-2 text-base leading-loose text-body-color hover:text-primary"
                   >
                     Setting & Privacy
@@ -129,7 +129,7 @@ const Footer = () => {
               <ul>
                 <li>
                   <Link
-                    href="#"
+                    to="#"
                     className="inline-block mb-2 text-base leading-loose text-body-color hover:text-primary"
                   >
                     Premium Support
@@ -137,7 +137,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    to="#"
                     className="inline-block mb-2 text-base leading-loose text-body-color hover:text-primary"
                   >
                     Our Services
@@ -145,7 +145,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    to="#"
                     className="inline-block mb-2 text-base leading-loose text-body-color hover:text-primary"
                   >
                     Know Our Team
@@ -153,7 +153,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="#"
+                    to="#"
                     className="inline-block mb-2 text-base leading-loose text-body-color hover:text-primary"
                   >
                     Download App
@@ -169,26 +169,26 @@ const Footer = () => {
               </h4>
               <div className="flex items-center mb-6">
                 <Link
-                  href=""
-                  className="text-dark hover:bg-primary hover:border-primary mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
+                  to=""
+                  className="flex items-center justify-center w-8 h-8 mr-3 border rounded-full text-dark hover:bg-sky-600 hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
                 >
                   <BsFacebook />
                 </Link>
                 <Link
-                  href="#"
-                  className="text-dark hover:bg-primary hover:border-primary mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
+                  to="#"
+                  className="flex items-center justify-center w-8 h-8 mr-3 border rounded-full text-dark hover:bg-black hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
                 >
-                  <AiOutlineTwitter />
+                  <FaXTwitter />
                 </Link>
                 <Link
-                  href="#"
-                  className="text-dark hover:bg-primary hover:border-primary mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
+                  to="#"
+                  className="flex items-center justify-center w-8 h-8 mr-3 border rounded-full text-dark hover:bg-red-600 hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
                 >
                   <BsYoutube />
                 </Link>
                 <Link
-                  href="#"
-                  className="text-dark hover:bg-primary hover:border-primary mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
+                  to="#"
+                  className="flex items-center justify-center w-8 h-8 mr-3 border rounded-full text-dark hover:bg-blue-600 hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
                 >
                   <BsLinkedin />
                 </Link>

@@ -3,8 +3,10 @@ import "react-phone-number-input/style.css";
 import "./AddContact.css";
 import Swal from "sweetalert2";
 import PhoneInput from "react-phone-number-input";
+import useTitle from "../../hook/useTitle";
 
 const AddContacts = () => {
+  useTitle("Add Contact")
   const [value, setValue] = useState();
 
   const handleSubmit = (event) => {
@@ -59,12 +61,6 @@ const AddContacts = () => {
             'url("https://c4.wallpaperflare.com/wallpaper/944/995/821/abstract-backgrounds-minimalistic-website-wallpaper-preview.jpg")',
         }}
       >
-        {/* <img
-          className="flex items-center justify-center w-full h-screen bg-cover "
-          src=''
-          alt=""
-        /> */}
-
         <div className="">
           <h1 className="flex items-center justify-center mt-10 text-2xl font-semibold text-white">
             Add Contact

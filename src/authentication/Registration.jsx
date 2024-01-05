@@ -3,8 +3,10 @@ import { FcGoogle } from "react-icons/fc";
 import { useAuthGlobally } from "../context/AuthProvaider";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import useTitle from "../hook/useTitle";
 
 const Registration = () => {
+  useTitle("Registration");
   const { createUser, signInGoogle } = useAuthGlobally();
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");

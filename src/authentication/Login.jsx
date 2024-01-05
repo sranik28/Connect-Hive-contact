@@ -5,9 +5,11 @@ import Registration from "./Registration";
 import { useForm } from "react-hook-form";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { useAuthGlobally } from "../context/AuthProvaider";
-import Swal from "sweetalert2";
+import useTitle from "../hook/useTitle";
+
 
 const Login = () => {
+  useTitle("Login")
   const [signIn, setSignIn] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
 

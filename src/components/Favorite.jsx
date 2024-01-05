@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import FavoriteCards from "./FavoriteCard";
 import ContactModal from "./contactModal/ContactModal";
+import useTitle from "../hook/useTitle";
 
 const Favorite = () => {
+  useTitle("Favorite Contacts")
   const [favoriteContacts, setFavoriteContacts] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [contactId, setContactId] = useState();

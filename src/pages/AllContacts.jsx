@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import AllCard from "../components/AllCard";
 import ContactModal from "../components/contactModal/ContactModal";
+import useTitle from "../hook/useTitle";
 
 const AllContacts = () => {
+  useTitle("All Contacts")
   const [data, setData] = useState([]);
   const [contactId, setContactId] = useState();
   const [isOpen, setIsOpen] = useState(false);
