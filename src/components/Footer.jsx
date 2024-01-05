@@ -20,7 +20,7 @@ const Footer = () => {
             <div className="w-full mb-10">
               <Link
                 href="/"
-                className="mb-6 inline-block max-w-[160px] text-3xl text-secondary font-bold"
+                className="mb-6 inline-block max-w-[160px] text-3xl text-Primary font-bold"
               >
                 ConnectHive
               </Link>
