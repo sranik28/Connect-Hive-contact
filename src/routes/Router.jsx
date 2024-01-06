@@ -6,11 +6,13 @@ import AddContacts from "../pages/addContacts/AddContacts";
 import AllContacts from "../pages/AllContacts";
 import Home from "../pages/Home";
 import Favorite from "../components/Favorite";
+import Error from "../components/Error";
 
 const Router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <Error />,
     children: [
       {
         path: "/",
