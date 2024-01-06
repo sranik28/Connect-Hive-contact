@@ -1,7 +1,7 @@
 # This is my project (ConnectHive)
 
 - Hosted in FireBase -> [DreamPic](https://connect-hive-official.web.app/)
-
+- Server side code   -> (https://github.com/sranik28/connect-hive-server)
 
 # website Category
 - Contacts Management Application
@@ -42,7 +42,6 @@
 - Background image banner section
 - Home page added to extra section 
 - Toast message popup add
-- Loading spinner add
 - Error 404 page add
 - The Firebase config keys add
 - Add to the "active route" button
