@@ -1,6 +1,6 @@
 # This is my project (ConnectHive)
 
-- Hosted in FireBase -> [DreamPic](https://connect-hive-official.web.app/)
+- Hosted in FireBase -> [ConnectHive](https://connect-hive-official.web.app/)
 - Server side code   -> (https://github.com/sranik28/connect-hive-server)
 
 # website Category
