@@ -14,6 +14,8 @@ const Favorite = () => {
     setFavoriteContacts(favoritesFromLocalStorage);
   }, []);
 
+
+  
   return (
     <div className="container">
       <h1 className="flex items-center justify-center mt-5 text-4xl font-semibold md:text-5xl">Favorite Contacts</h1>
