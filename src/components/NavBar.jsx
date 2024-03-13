@@ -43,6 +43,7 @@ const NavBar = () => {
         transition={{ duration: 0.5 }}
         exit={{ opacity: 0 }}
       >
+        
         <li>
           <NavLink
             className={({ isActive }) => (isActive ? "active" : "")}
